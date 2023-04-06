@@ -1,0 +1,15 @@
+C:\Users\MuhammadZafran\Desktop\konstruktor\bin\Debug\net7.0\konstruktor.exe
+C:\Users\MuhammadZafran\Desktop\konstruktor\bin\Debug\net7.0\konstruktor.deps.json
+C:\Users\MuhammadZafran\Desktop\konstruktor\bin\Debug\net7.0\konstruktor.runtimeconfig.json
+C:\Users\MuhammadZafran\Desktop\konstruktor\bin\Debug\net7.0\konstruktor.dll
+C:\Users\MuhammadZafran\Desktop\konstruktor\bin\Debug\net7.0\konstruktor.pdb
+C:\Users\MuhammadZafran\Desktop\konstruktor\obj\Debug\net7.0\konstruktor.csproj.AssemblyReference.cache
+C:\Users\MuhammadZafran\Desktop\konstruktor\obj\Debug\net7.0\konstruktor.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\MuhammadZafran\Desktop\konstruktor\obj\Debug\net7.0\konstruktor.AssemblyInfoInputs.cache
+C:\Users\MuhammadZafran\Desktop\konstruktor\obj\Debug\net7.0\konstruktor.AssemblyInfo.cs
+C:\Users\MuhammadZafran\Desktop\konstruktor\obj\Debug\net7.0\konstruktor.csproj.CoreCompileInputs.cache
+C:\Users\MuhammadZafran\Desktop\konstruktor\obj\Debug\net7.0\konstruktor.dll
+C:\Users\MuhammadZafran\Desktop\konstruktor\obj\Debug\net7.0\refint\konstruktor.dll
+C:\Users\MuhammadZafran\Desktop\konstruktor\obj\Debug\net7.0\konstruktor.pdb
+C:\Users\MuhammadZafran\Desktop\konstruktor\obj\Debug\net7.0\konstruktor.genruntimeconfig.cache
+C:\Users\MuhammadZafran\Desktop\konstruktor\obj\Debug\net7.0\ref\konstruktor.dll
