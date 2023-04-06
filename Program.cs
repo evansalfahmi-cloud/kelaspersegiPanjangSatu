@@ -21,6 +21,11 @@ class persegiPanjang
 
 untuk membuat objeknya
 persegiPanjang cth = new persegiPanjang();
+
+objek dari suatu kelas punya data sendiri sendiri
+tidak terikan satu dengan yang lain
+
+
 */
 
 using System;
@@ -38,20 +43,28 @@ class DemoKelasPersegipanjang
     static void Main(){
         // membuat variabel baru untuk memuat hasil perkalian panjang * lebar 
         //inisiasi bernama luas
-        double luas;
+        double luas1;
+        double luas2;
 
-        //pembuatan objek persegiPanjang
-        persegiPanjang cth = new persegiPanjang();
+        //pembuatan objek persegiPanjang1
+        persegiPanjang persegiPanjang1 = new persegiPanjang();
+        //membuat objek persegiPanjang2
+        persegiPanjang persegiPanjang2 = new persegiPanjang ();
 
-        //memuat data persegii panjang
-        cth.panjang = 10 ; 
-        cth.lebar = 25;
+        persegiPanjang1.panjang = 24;
+        persegiPanjang1.lebar = 29;
 
-        //membuat perhituang luas persegiPanjang 
-        luas = cth.panjang * cth.lebar;
-        
-        //memuat/ tampilkan nilai luas
-        Console.WriteLine("Luas persegi panjang adalah : " + luas);
+        persegiPanjang2.panjang = 23;
+        persegiPanjang2.lebar = 5;
+
+        //menghitung luas persegiPanjang1
+        luas1 = persegiPanjang1.panjang * persegiPanjang1.lebar;
+        //menghitung luas persegiPanjang2
+        luas2 = persegiPanjang2.panjang * persegiPanjang2.lebar;
+
+        //tampil kan luas1 dan luas2;
+        Console.WriteLine ("luas persegiPanjang1 adalah : "+luas1);
+        Console.WriteLine("luas persegiPanjang2 adalah : "+luas2);
 
     }
 }
