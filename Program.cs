@@ -1,29 +1,7 @@
 ﻿/*
 
-Kelas sederhana
-tentang persegi panjang
-memiliki sisi yang disebut panjang dan lebar
-rumus : panjang * lebar
-
-alur
-
-mendifinisikan kelas
-Persegi panjang
-berisi data panjang dan lebar
-
-jadi
-penulisan
-class persegiPanjang 
-{
-    public double panjang;
-    public double lebar;
-}
-
-untuk membuat objeknya
-persegiPanjang cth = new persegiPanjang();
-
-objek dari suatu kelas punya data sendiri sendiri
-tidak terikan satu dengan yang lain
+mengisi nilai pada referensi
+menyalin referensi dari sebuah objek ke objek lainnya
 
 
 */
@@ -38,34 +16,48 @@ class persegiPanjang {
 }
 
 //memembuat kelas main program
-class DemoKelasPersegipanjang
+class DemoKelasReference
 {
     static void Main(){
         // membuat variabel baru untuk memuat hasil perkalian panjang * lebar 
         //inisiasi bernama luas
-        double luas1;
-        double luas2;
+        persegiPanjang persegiPanjang1, persegiPanjang2 ;
+        persegiPanjang1 = new persegiPanjang();
+        persegiPanjang2 = persegiPanjang1;
 
-        //pembuatan objek persegiPanjang1
-        persegiPanjang persegiPanjang1 = new persegiPanjang();
-        //membuat objek persegiPanjang2
-        persegiPanjang persegiPanjang2 = new persegiPanjang ();
+        //mengisi niai ke dalam objek yang ditunjuk oleh persegi panjang1;
 
-        persegiPanjang1.panjang = 24;
-        persegiPanjang1.lebar = 29;
+        persegiPanjang1.panjang = 12;
+        persegiPanjang2.lebar = 21;
 
-        persegiPanjang2.panjang = 23;
-        persegiPanjang2.lebar = 5;
+        Console.WriteLine ("kondisi awal : \n");
+        //menampilkan datadari objek yg ditunjuk oleh persegipanjang1
+        Console.WriteLine("persegiPanjang1");
+        Console.WriteLine("panjang : "+persegiPanjang1.panjang);
+        Console.WriteLine("lebar   : "+persegiPanjang1.lebar);
 
-        //menghitung luas persegiPanjang1
-        luas1 = persegiPanjang1.panjang * persegiPanjang1.lebar;
-        //menghitung luas persegiPanjang2
-        luas2 = persegiPanjang2.panjang * persegiPanjang2.lebar;
 
-        //tampil kan luas1 dan luas2;
-        Console.WriteLine ("luas persegiPanjang1 adalah : "+luas1);
-        Console.WriteLine("luas persegiPanjang2 adalah : "+luas2);
+        //menampilkan data dari objek persegiPanjang2
+        Console.WriteLine("persegiPanjang2");
+        Console.WriteLine("panjang : "+persegiPanjang2.panjang);
+        Console.WriteLine("lebar   : "+persegiPanjang2.lebar);
 
+        //merubah data dalam objek
+        persegiPanjang1.panjang = 13;
+        persegiPanjang1.lebar = 25;
+
+        Console.WriteLine ("\nkeadaan akhir : \n");
+
+        //menampilkan datadari objek yg ditunjuk oleh persegipanjang1
+        Console.WriteLine("persegiPanjang1");
+        Console.WriteLine("panjang : "+persegiPanjang1.panjang);
+        Console.WriteLine("lebar   : "+persegiPanjang1.lebar);
+
+
+        //menampilkan data dari objek persegiPanjang2
+        Console.WriteLine("persegiPanjang2");
+        Console.WriteLine("panjang : "+persegiPanjang2.panjang);
+        Console.WriteLine("lebar   : "+persegiPanjang2.lebar);
     }
 }
 
