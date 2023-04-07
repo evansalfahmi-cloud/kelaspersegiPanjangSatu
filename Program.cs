@@ -1,45 +1,64 @@
 ﻿/*
-OVERLOAD TERHADAP KONSTRUKTOR
-untuk membedakan segi empat berupa persegi panjang atau bujursangkar
+melewatkan parameter bertipe objek
 
+objek dapat dilewatkan sebagai parameter ke dalam suatu metode melalui referensinya
 CONTOH
 */
 using System;
-class segiEmpat {
-    double panjang;
-    double lebar;
+class persegiPanjang {
+    public double panjang;
+    public double lebar;
 
-    //membuat konstruktor pesegi panjang 
-    public segiEmpat (double p , double l){
-        panjang = p ;
+    public persegiPanjang (double p, double l ){
+        panjang = p;
         lebar = l;
-    }
-
-    //konstrktor untuk bujur sangkar
-    public segiEmpat (double sisi){
-        panjang = lebar = sisi ;
     }
 
     private double rumusLuas (){
         return panjang * lebar;
     }
 
-    public void tampilkanLuas (string s){
-        Console.WriteLine(s+rumusLuas());
+    public void tampilkanLuas(){
+        Console.WriteLine("Luas = "+ rumusLuas());
+    }
+
+    //mendefinisikan metode dengan parameter
+    //berupa referensi ke objek
+    public bool Sama (persegiPanjang obj){
+        if (obj.panjang == panjang && obj.lebar == lebar)
+        {
+            return true;
+            }
+        else{
+            return false;
+        }
     }
 }
 
-class demoKonstruktorOverload {
+class demoParameterObjek1 {
     static void Main (){
-        //membuat objek persegi panjang
-        segiEmpat persegiPanjang = new segiEmpat (9,5);
+        persegiPanjang perPjg1, perPjg2, perPjg3;
+        bool hasil1, hasil2;
 
-        //membuat objek bujur sangkar
-        segiEmpat bujurSangkar = new segiEmpat (7);
+        perPjg1 = new persegiPanjang(6,5);
+        perPjg2 = new persegiPanjang(7,4);
+        perPjg3 = new persegiPanjang(4,9);
 
-        //memanggil tampilkanLuas
-        persegiPanjang.tampilkanLuas("Luas persegi Panjang adalah = ");
-        bujurSangkar.tampilkanLuas  ("Luas bujur sangkar adalah   = ");
-        
+        //membandingkan objek
+        //yg diunjuk oleh perPjg1 dan perPjg2
+        hasil1 = perPjg1.Sama(perPjg2);
+        if (hasil1){
+            Console.WriteLine("perPjg1 sama dengan perPjg2");
+        } else{
+            Console.WriteLine("perPjg1 tidak sama dengan perPjg2");
+        }
+        //membandingkan objek
+        //yang ditunjuk oleh perPjg1 dan perPjg3
+        hasil2 = perPjg1.Sama(perPjg3);
+        if (hasil2){
+            Console.WriteLine("perPjg1 sama dengan perPjg3");
+        }else {
+            Console.WriteLine("perPjg1 tidak sama dengan perPjg3");
+        }
     }
 }
