@@ -6,7 +6,7 @@ fungsi yang dibuat didalam kelas untuk melakukan tugas spesifik tertentu
 Nilai balik
 tanpa nilai balik
 
-/==================================================
+==========================
 METODE TANPA NILAI BALIK
 =========================
 
@@ -14,34 +14,46 @@ PENDEFINISIAN MENGGUNAKAN KATA KUNCI VOID
 Tipe akses vooid NAMAMETODE(daftar-parameter){
     //badan metode
 }
+
+==========================
+METODE DENGAN NILAI BALIK
+==========================
+PENDEFINISIAN
+TipeAkses TipeKembalian NamaMetode(daftar-parameter){
+    badan metode;
+    return nilai;
+
+}
+
+karena metode ini akan mengembalikan nilai maka perlu di deklarasikan menggunakan tipe data
+
 */
 
-using System;
-
-class persegiPanjang{
+using System ;
+class persegiPanjang {
     public double panjang;
     public double lebar;
-
-    //membat metode untuk rumus luas
-    public void RumusLuas (){
-        double luas;
+    
+    //mendefinisikan metode rumusLuas
+    public double rumusHitungLuas (){
+        double luas ;
         luas = panjang * lebar;
-        Console.WriteLine("LUAS PERSEGI PANJANG = "+ luas);
+        return luas; //mengembalikan nilai
     }
 }
 
-class metodeVoidDemo {
+class DemoMetodePengembalianNilai {
     static void Main (){
-        persegiPanjang persegiPanjang1 = new persegiPanjang ();
-        
-        // memberikan nilai pada panjang lebar;
-        persegiPanjang1.panjang = 23;
-        persegiPanjang1.lebar = 24;
-        
-        Console.WriteLine ("persegi panjang 1 memiliki  panjang = "+ persegiPanjang1.panjang);
-        Console.WriteLine ("persegi panjang 1 memiliki lebar    = "+ persegiPanjang1.lebar);
-        //memanggil metode rumus luas
-        persegiPanjang1.RumusLuas();
+        persegiPanjang persegiPanjang1= new persegiPanjang ();
 
-        }
+        //isi data
+        persegiPanjang1.panjang = 5;
+        persegiPanjang1.lebar = 7;
+
+        //memanggil metode rumusHitungLuas ()
+        double L = persegiPanjang1.rumusHitungLuas();
+
+        //menampilkan luas
+        Console.WriteLine("luas persegi panjang 1 adalah = "+ L);
+    }
 }
