@@ -1,42 +1,45 @@
 ﻿/*
-OVERLOAD TERHADAP METODE
-overload adalah proses pendefinisian dua buah metode dengan nama sama tapi parameternya berbeda
+OVERLOAD TERHADAP KONSTRUKTOR
+untuk membedakan segi empat berupa persegi panjang atau bujursangkar
 
 CONTOH
 */
-using System ;
+using System;
+class segiEmpat {
+    double panjang;
+    double lebar;
 
-class persegiPanjang {
-    public double panjang;
-    public double lebar;
-
-    public persegiPanjang (double p , double l){ //konstruktor persegi Panjang
-        panjang = p ; 
+    //membuat konstruktor pesegi panjang 
+    public segiEmpat (double p , double l){
+        panjang = p ;
         lebar = l;
+    }
+
+    //konstrktor untuk bujur sangkar
+    public segiEmpat (double sisi){
+        panjang = lebar = sisi ;
     }
 
     private double rumusLuas (){
         return panjang * lebar;
     }
 
-    public void tampilkanLuas (){
-        Console.WriteLine("Luas = "+ rumusLuas());
-    }
-
-    public void tampilkanLuas(string s){ //overload tampilkanLuas
+    public void tampilkanLuas (string s){
         Console.WriteLine(s+rumusLuas());
     }
 }
 
-class overloadDemoMetode
-{
+class demoKonstruktorOverload {
     static void Main (){
-        persegiPanjang perPjg  = new persegiPanjang(8,7);
+        //membuat objek persegi panjang
+        segiEmpat persegiPanjang = new segiEmpat (9,5);
 
-        //memanggil metode rumus luas tanpa parameter
-        perPjg.tampilkanLuas();
+        //membuat objek bujur sangkar
+        segiEmpat bujurSangkar = new segiEmpat (7);
+
+        //memanggil tampilkanLuas
+        persegiPanjang.tampilkanLuas("Luas persegi Panjang adalah = ");
+        bujurSangkar.tampilkanLuas  ("Luas bujur sangkar adalah   = ");
         
-        //memanggil metode rumus luas dengan parameter string s
-        perPjg.tampilkanLuas("Luas persegi Panjang adalah = ");
     }
 }
