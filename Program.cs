@@ -1,46 +1,42 @@
 ﻿/*
-contoh
-KONSTRUKTOR DENGAN PARAMETER
+OVERLOAD TERHADAP METODE
+overload adalah proses pendefinisian dua buah metode dengan nama sama tapi parameternya berbeda
+
+CONTOH
 */
-using System;
+using System ;
 
 class persegiPanjang {
-    public double panjang ;
+    public double panjang;
     public double lebar;
 
-    //mendefinisikan konstruktor
-    public persegiPanjang (double p , double l){
-        panjang = p ;
+    public persegiPanjang (double p , double l){ //konstruktor persegi Panjang
+        panjang = p ; 
         lebar = l;
     }
 
-    //mendefinisikan metode untuk rubah data
-    public void rubahData (double p , double l){
-        panjang = p ;
-        lebar = l ;
-    }
-
-    //membuat metode/ rumus menghitung luas pesegi panjang
-    public double rumusLuas (){
+    private double rumusLuas (){
         return panjang * lebar;
     }
 
-    //membuat tampilkan luas persegi panjang
-    public void tampilkanLuas (string s){
+    public void tampilkanLuas (){
+        Console.WriteLine("Luas = "+ rumusLuas());
+    }
+
+    public void tampilkanLuas(string s){ //overload tampilkanLuas
         Console.WriteLine(s+rumusLuas());
     }
-    
 }
 
-class demoKonstruktoParameter
+class overloadDemoMetode
 {
     static void Main (){
-        persegiPanjang perPjg1 = new persegiPanjang(9,8);
-        persegiPanjang perPjg2 = new persegiPanjang(12,7);
+        persegiPanjang perPjg  = new persegiPanjang(8,7);
 
-        perPjg1.tampilkanLuas("LUAS PERSEGIPANJANG PERTAMA : ");
-        perPjg2.tampilkanLuas("LUAS PERSEGIPANJANG KEDUA   : ");
-
-
+        //memanggil metode rumus luas tanpa parameter
+        perPjg.tampilkanLuas();
+        
+        //memanggil metode rumus luas dengan parameter string s
+        perPjg.tampilkanLuas("Luas persegi Panjang adalah = ");
     }
 }
