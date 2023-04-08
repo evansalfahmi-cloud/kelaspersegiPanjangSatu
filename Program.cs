@@ -1,71 +1,64 @@
 ﻿/*
-parameter berupa objek juga bisa digunakan pada konstruktor
+MENGEMBALIKAN NILAI BERTIPE OBJEK
+
+selain dapat digunakan sevagai parameter objek juga dapat diperankan sebagai nilai kembalian dari suatu metode
+yang dikembalikan adalah referensinya
+selanjutnya referensi yang dikembalikan oleh metode tersebut dapat ditampung oleh referensi lain
+untuk melakukan hal ini kita perlu membuat objek baru di dalam badan metode
+
 CONTOH
 */
 using System;
 
 class persegiPanjang {
-    public double panjang;
-    public double lebar;
+    private double panjang ;
+    private double lebar;
 
-    //mendefinisikan kosntruktor dg parameter berupa referensi ke objek
+    //mendefinisikan konstruktor dengan parameter
+    //berupa referensi ke objek
     public persegiPanjang (persegiPanjang obj){
         panjang = obj.panjang;
         lebar = obj.lebar;
     }
 
-    //konstruktor persegipanjang untuk memuat data p dan l
+    //konstruktorparameter
     public persegiPanjang (double p , double l){
         panjang = p;
         lebar = l;
     }
 
-    private double rumusLuas(){
+    //rumus menghitung luas
+    private double rumusLuas (){
         return panjang * lebar;
     }
 
-    public void tampilkanLuas(){
-        Console.WriteLine("Luas = "+ rumusLuas());
+    //menampilkan nilai luas
+    public void tampilkanLuas (string s){
+        Console.WriteLine ("Luas "+s+"\t = "+ rumusLuas());
     }
 
-    //mendefinisikan metode dengan parameter berupa referensi ke objek
-    public bool Sama (persegiPanjang obj){
-        if (obj.panjang == panjang && obj.lebar == lebar){
-            return true ; 
-        } else {
-            return false;
-        }
+    //mendefinisikan metode yang mengembalikan objek
+    public persegiPanjang perbesarObjek (int perBesaran){
+        persegiPanjang obj = new persegiPanjang (panjang * perBesaran , lebar * perBesaran);
+        //mengembalikan objek
+        return obj;
     }
 }
 
-class demoParameterObjekUntukKonstruktor 
-{
-    static void Main(){
-        persegiPanjang perPjg1, perPjg2, perPjg3;
-        bool hasil1, hasil2;
+class pengembalianObjek {
+    static void Main () {
+        persegiPanjang perPjg1, perPjg2;
+        perPjg1 = new persegiPanjang (8,7);
 
-        perPjg1 = new persegiPanjang (8,6);
-        perPjg2 = new persegiPanjang (10,5);
+        //buat objek baru dengan memanggil metode PerbesaraObjek()
+        perPjg2 = perPjg1.perbesarObjek(2); //diperbesar 2 kali dari ukuran semula
 
-        //membuat objek yang datanya diambil dari objek lain
-        perPjg3 = new persegiPanjang(perPjg1);
+        //menampilkan luas 
+        Console.WriteLine ("-----------------------");
+        Console.WriteLine (" Demo perbesaran objek ");
+         Console.WriteLine("-----------------------");
+        perPjg1.tampilkanLuas ("objek pertama");
+        perPjg2.tampilkanLuas ("objek kedua");
 
-        //membandingkan objek yang ditunjuk oleh perPjg1 dan perPjg2
-        hasil1 = perPjg1.Sama(perPjg2);
-
-        if (hasil1){
-            Console.WriteLine ("perPjg1 sama dengan perPjg2");
-        }else {
-            Console.WriteLine("perPjg1 tidak sama dengan perPjg2");
-        }
-
-        //membandingkan objek yang ditunjuk oleh perPjg1 dan perPjg3;
-        hasil2 = perPjg1.Sama(perPjg3);
-
-        if (hasil2){
-            Console.WriteLine("perPjg1 sama dengan perPjg3");
-        }else {
-            Console.WriteLine("perPjg1 tidak sama dengan perPjg3");
-        }
     }
 }
